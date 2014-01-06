@@ -185,6 +185,9 @@
 - _Part cost_: per-unit cost
 - _Time-to-market cost_: loss of revenue
 
+
+## Types of Cost
+
 ![Cost vs Units](cost_vs_units_graph.png)
 
 ![Per Unit Cost Equation](per_unit_cost_equation.png)
