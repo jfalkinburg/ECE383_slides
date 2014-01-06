@@ -34,7 +34,8 @@
 
 ## Why Digital Systems?
 
-**Image**
+![Fly By Wire System](fly_by_wire_digital.png)
+**Fly-By-Wire Digital System**
 
 
 
@@ -95,7 +96,7 @@
 
 ## Digital Implementation Methods
 
-**Image**
+![Digital Implementation Methods](digital_hardware_implementation_methods.png)
 
 
 
@@ -184,7 +185,9 @@
 - _Part cost_: per-unit cost
 - _Time-to-market cost_: loss of revenue
 
-**Image**
+![Cost vs Units](cost_vs_units_graph.png)
+
+![Per Unit Cost Equation](per_unit_cost_equation.png)
 
 
 ## Technology Summary
@@ -215,5 +218,72 @@
 ## Digital System Views
 
 - Behavioral View
+  - Describe functionalities and I/O behavior
+  - Treat the system as a black box
 - Structural View
+  - Describe the internal implementation (components and interconnections)
+  - Essentially a block diagram
 - Physical View
+  - Add more info to structural view: component size, component locations, routing wires
+  - e.g. layout of a printed circuit board (PCB)
+
+
+## Digital System Views
+
+![Digital System Views](digital_system_views.png)
+
+
+## Register-Transfer Abstraction
+
+- Contains higher-level components (register, adder, mux, etc.) - think of datapaths in ECE281/382
+- Based on clock "tick" event
+- Described as a finite state machine
+- Later on: a _design methodology_ in which the system operation is described by how the data is manipulated and moved among registers
+
+![Register Transfer Abstraction](register_transfer_abstraction.png)
+
+
+
+# Digital System Implementation
+
+
+## Digital System Implementation
+
+1. Synthesis
+  - Maps a higher-level description to lower-level components (RT, gate, technology map levels)
+  - Results in structural view
+2. Physical Design
+  - Generates netlist based on synthesis
+  - Floor plan - layout based on RT / processor level
+  - Place & Route - gate level
+  - Circuit Extraction - compute propagation delays (Cp / R)
+  - Power / Clock Networks
+  - Etc.
+
+
+## Digital System Implementation
+
+3. Verification - Check whether a design meets the functional and timing goals
+  - Simulation
+  - Formal verification
+  - Hardware emulation
+4. _Testing_ - Process of detecting physical defects of a die or package that occurred during manufacturing
+
+
+
+# Design Goals
+
+
+## Design Goals
+
+1. Design for Efficiency
+  - Synthesis cannot convert bad designs into good ones
+  - Know what hardware your HDL will create
+2. Design for Large
+  - Design a large module
+  - Design to be incorporated into a larger system
+  - Design to facilitate the overall development process
+3. Design for Portability
+  - Device independent
+  - Software independent
+  - Design reuse
