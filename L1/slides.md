@@ -6,6 +6,7 @@
 
 ## Lesson Outline
 
+- Some Perspective
 - Why Digital Systems?
 - Instructor / Course Inroduction
 - Methods of Implementing Digital Systems
@@ -13,6 +14,10 @@
 - Abstraction
 - Digital System Implementation
 - Design Goals
+
+
+
+# Some Perspective
 
 
 
