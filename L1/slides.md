@@ -53,7 +53,7 @@
 
 ## About Me
 
-**Pictures**
+![Cotopaxi](cotopaxi.jpg)
 
 
 ## Rules
@@ -67,8 +67,12 @@
 
 - Website
   - www.ece383.com
+  - On Github - report bugs!
 - Textbook
   - RTL Hardware Design Using VHDL by Pong P. Chu
+- Digilent Atlys Board
+  - Will be issued to you now!
+- Xilinx ISE
 
 
 
@@ -193,15 +197,15 @@
 
 | | FPGA | Gate Array | Standard Cell |
 | :-: | :-: | :-: | :-: |
-| tailored masks | 0 | 3 to 5 | 15 or more |
-| area | | | best |
-| speed | | | best |
-| power | | | best |
-| NRE cost | best | | |
-| per part cost | | | best |
-| design cost | best | | |
-| time to market | best | | |
-| per unit cost | | depends on volume | |
+| **tailored masks** | 0 | 3 to 5 | 15 or more |
+| **area** | | | best |
+| **speed** | | | best |
+| **power** | | | best |
+| **NRE cost** | best | | |
+| **per part cost** | | | best |
+| **design cost** | best | | |
+| **time to market** | best | | |
+| **per unit cost** | | depends on volume | |
 
 
 
@@ -213,4 +217,3 @@
 - Behavioral View
 - Structural View
 - Physical View
-
