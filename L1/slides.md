@@ -195,6 +195,9 @@
 
 ![Cost vs Units](cost_vs_units_graph.png)
 
+
+## Types of Cost
+
 ![Per Unit Cost Equation](per_unit_cost_equation.png)
 
 
