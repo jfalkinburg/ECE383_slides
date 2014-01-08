@@ -105,7 +105,7 @@
 - Inputs: a(2 downto 0)
 - Output: even
 
-**IMAGE**
+![Parity Detector](parity_detector.png)
 
 
 ## Even Parity Detection Circuit
