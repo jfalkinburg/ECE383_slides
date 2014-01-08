@@ -140,7 +140,7 @@ end sop_arch;
 
 ## Alternative Implementation
 
-- Same entity declaration
+- Same entity declaration  TEST!!!!
 - VHDL now contains _two_ architecture bodies (`sop_arch` is in the "...")
 - Implicit delta delay
 
@@ -196,8 +196,6 @@ end str_arch;
 
 **Note:** `xor2` and `not1` must be defined in an imported library.
 
-**Image**
-
 
 ## Even Detector Behavioral Description
 
@@ -219,9 +217,12 @@ begin
 end beh1_arch;
 ```
 
-![Even Detector Behavioral](even_detector_behavioral.png)
-
 **Note:** "behavioral in VHDL is anything that is not structural.
+
+
+## Even Detector Behavioral Description
+
+![Even Detector Behavioral](even_detector_behavioral.png)
 
 
 ## Testbench
