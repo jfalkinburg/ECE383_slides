@@ -135,7 +135,7 @@ end sop_arch;
 
 ## VHDL Conceptual Diagram
 
-**Image**
+![Conceptual Diagram](conceptual_diagram.png)
 
 
 ## Alternative Implementation
@@ -156,7 +156,7 @@ begin
 end xor_arch;
 ```
 
-**Image**
+![XOR Conceptual Diagram](xor_conceptual_diagram.png)
 
 
 ## Structural Description
@@ -168,7 +168,7 @@ end xor_arch;
   - First _declared_ (made known)
   - Then _instantiated_ (used)
 
-**Image**
+![XOR Structural Diagram](xor_structural_diagram.png)
 
 
 ## Even Detector Structural Description
@@ -219,7 +219,7 @@ begin
 end beh1_arch;
 ```
 
-**Image**
+![Even Detector Behavioral](even_detector_behavioral.png)
 
 **Note:** "behavioral in VHDL is anything that is not structural.
 
@@ -231,7 +231,7 @@ end beh1_arch;
 
 **Note:** See Listing 2.7 (page 35) for example testbench code.
 
-**Image**
+![Testbench](testbench.png)
 
 
 ## VHDL Configuration
@@ -261,7 +261,7 @@ end demo_config;
 - All VHDL language constructs can be realized _in simulation_
 - Simulation is executed by sampling circuit using small time steps (user configurable)
 
-**Image**
+![Waveform](waveform.png)
 
 
 ## HDL Synthesis
