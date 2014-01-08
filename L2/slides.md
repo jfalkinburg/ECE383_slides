@@ -63,7 +63,7 @@
   - _Connectivity_ - Connection of entities (e.g. wires)
   - _Concurrency_ - parallel operations
   - _Timing_ - schedule / order of multiple operations
-- Muse be able to describe a circuit in
+- Must be able to describe a circuit in
   - Gate level and RT level
   - Structural view and behavioral view (*not* physical)
 
@@ -140,7 +140,7 @@ end sop_arch;
 
 ## Alternative Implementation
 
-- Same entity declaration  TEST!!!!
+- Same entity declaration
 - VHDL now contains _two_ architecture bodies (`sop_arch` is in the "...")
 - Implicit delta delay
 
