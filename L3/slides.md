@@ -445,3 +445,135 @@ b2 <= to_bitvector(s1 and s2);
 s3 <= to_stdlogicvector(b1) or s2;
 s3 <= to_stdlogicvector(b1 or to_bitvector(s2));
 ```
+
+
+## Array Data Type Operators
+
+- Relational operators for array
+  - Operands must have the same element type but their lengths may differ
+  - Two arrays are compared element by element, from the left-most element
+  - All of the follwoing return true
+    - "011"="011", "011">"010", "011">"00010", "0110">"011"
+- Concatentation operator (&)
+  - `y <= "00" & a(7 downto 2)`
+  - `y <= a(7) & a(7) & a(7 downto 2)`
+  - `y <= a(1 downto 0) & a(7 downto 2);`
+
+
+## Array Aggregate
+
+- Aggregate is a VHDL construct to assign a value to an array-typed object
+
+```vhdl
+a <= "10100000";
+a <=  (7 => '1', 6 => '0', 0 => '0', 1 => '0',
+      5 => '1', 4 => '0', 3 => '0', 2 => '1');
+a <= (7|5 => '1', 6|4|3|2|1|0 => '0');
+a <= (7|5 => '1', others => '0');
+a <= "00000000";
+a <= (others => '0');
+```
+
+
+## IEEE `numeric_std` package
+
+- How to infer arithmetic operators?
+- In standard VHDL:
+
+```vhdl
+signal a, b, sum: integer;
+...
+sum <= a + b;
+```
+
+- What's wrong with `integer` data type?
+
+
+## IEEE `numeric_std` package
+
+- IEEE `numeric_std` package: define integer as an array of elements of `std_logic`
+- Two data types: unsigned, signed
+- The array interpreted as an unsigned or signed binary number
+  - `signal x, y: signed(15 downto 0)`
+- Need to invoke package to use the data type
+
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+```
+
+
+## IEEE `numeric_std` package - Overloaded Operators
+
+**Image**
+
+
+## IEEE `numeric_std` package - New Functions
+
+**Image**
+
+
+## IEEE `numeric_std` package - Type Conversion
+
+- `std_logic_vector`, `unsigned`, `signed` are defined as an array of elements of `std_logic`
+- Considered as three different data types in VHDL
+- Type conversion between data types:
+  - Type conversion functions
+  - Type casting (for "closely related" data types)
+
+**Image**
+
+
+## Casting vs. Conversion
+
+- **Type Casting** (language primitive) is available between _related_ types
+  - `bit`, `std_logic`
+  - `bit_vector`, `std_logic_vector`, `unsigned`, `signed`1
+  - `integer`, `natural`, `positive`
+- **Conversion Functions** (library add-ons) must be used when type casting is not available
+- **Best Reference**: C:\Xilinx\xx.x\ISE_DS\vhdl\src
+
+
+## Non-IEEE Packages
+
+- Packages by Synopsys
+- `std_logic_arith`
+  - Similar to `numeric_std`
+  - New data types: `unsigned`, `signed`
+  - Details are different
+- `std_logic_unsigned` / `std_logic_signed`
+  - Treat `std_logic_vector` as `unsigned` and `signed` numbers
+  - Overload `std_logic_vector` with `arith` operations
+- Vendors typically store these packages in the IEEE library
+- Only one type (`unsigned` / `signed`) can be used per VHDL file
+- `unsigned` / `signed` defeat the motivation behind strong typing
+- **`numeric_std` is preferred** (required in this class)
+
+
+
+# Synthesis Guidelines
+
+
+## Guidelines for General VHDL
+
+- Use the `std_logic_vector` and `std_logic` instead of `bit_vector` and `bit` data types
+- Use the `numeric_std` package and the `unsigned` and `signed` data types for synthesizing arithmetic operations
+- Only use `downto` in array specification (e.g. `unsigned`, `signed`, `std_logic_vector`)
+- Use parentheses to clarify the intended order of operations
+- Don't use user-defined types unless there is a compelling reason
+- Don't use immediate assignment (i.e. `:=`) to assign an initial value to a signal
+- Use operands with identical lengths for relational operators
+
+
+## Guidelines for General VHDL
+
+- Include an informational header for each file
+- Be consistent with use of case
+- Use proper spaces, blank lines, and indentations to make the code clear
+- Add necessary comments
+- Use symbolic constant names to replace hard literals in VHDL code
+- Use a suffix to indicate a signal's special property:
+  - `_n` for active-low signals
+  - `_i` for internal signals (tied to an output signal to make it readable)
+- Keep the line width within 72 characters so code can be displayed and printed properly by various editors and printers without wrapping
