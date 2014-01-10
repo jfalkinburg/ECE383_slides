@@ -60,8 +60,6 @@ end even_detector;
 
 ## Common Mistake with Mode
 
-![Common Mistake](common_mistake.jpg)
-
 ```vhdl
 entity mode_demo is
   port(
