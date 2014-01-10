@@ -60,7 +60,7 @@ end even_detector;
 
 ## Common Mistake with Mode
 
-**Image**
+![Common Mistake](common_mistake.jpg)
 
 ```vhdl
 entity mode_demo is
@@ -384,12 +384,12 @@ alias reg3 : std_logic_vector(2 downto 0) is word(2 downto 0);
 
 ## Operators in Standard VHDL
 
-**Image**
+![Operators](vhdl_operators_1.jpg)
 
 
 ## Operators in Standard VHDL
 
-**Image**
+![Operators](vhdl_operators_2.jpg)
 
 
 ## IEEE `std_logic_1164` package
@@ -428,14 +428,14 @@ use ieee.std_logic_1164.all;
 - _Overloading_: same operator for different data types
 - Overloaded operators in `std_logic_1164` package
 
-**Image**
+![Overloaded Operators](overloaded_operators.jpg)
 
 
 ## IEEE `std_logic_1164` package - Conversion Functions
 
 - Provides functions to convert between data types
 
-**Image**
+![Conversion Functions](conversion_functions.jpg)
 
 ```vhdl
 signal s1, s2, s3 : std_logic_vector(7 downto 0);
@@ -506,12 +506,12 @@ use ieee.numeric_std.all;
 
 ## IEEE `numeric_std` package - Overloaded Operators
 
-**Image**
+![Overloaded Operators](numeric_std_overloaded_operators.jpg)
 
 
 ## IEEE `numeric_std` package - New Functions
 
-**Image**
+![New Functions](numeric_std_new_functions.jpg)
 
 
 ## IEEE `numeric_std` package - Type Conversion
@@ -522,7 +522,7 @@ use ieee.numeric_std.all;
   - Type conversion functions
   - Type casting (for "closely related" data types)
 
-**Image**
+![Type conversion](numeric_std_type_conversion.jpg)
 
 
 ## Casting vs. Conversion
