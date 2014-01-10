@@ -4,7 +4,7 @@
 
 
 
-## Lesson Outline
+# Lesson Outline
 
 1. Basic VHDL Program
 2. Lexical Elements and Program Format
