@@ -304,6 +304,51 @@ sig <=
 ## Conversion: Conditional -> Selected
 
 ```vhdl
+sig <=  value_expr_0 when bool_expr_0 else
+        value_expr_1 when bool_expr_1 else
+        value_expr_2 when bool_expr_2 else
+        value_expr_n;
 ```
 ```vhdl
+sel(2) <= '1' when bool_expr_0 else '0';
+sel(1) <= '1' when bool_expr_1 else '0';
+sel(0) <= '1' when bool_expr_2 else '0';
+
+with sel select
+  sig <=  value_expr_0 when "100"|"101"|"110"|"111",
+          value_expr_1 when "010"|"011",
+          value_expr_2 when "001",
+          value_expr_n when others;
 ```
+
+
+## Conditional vs Selected Comparison
+
+- Selected signal assignment:
+  - Good match for a circuit described by a functional table
+  - Example: binary decoder, multiplexer
+  - Less effective if input pattern is not given a preferential treatment
+- Conditional signal assignment:
+  - Good match for a circuit that needs to give preferential treatment for certain conditions or to prioritize operatoins
+  - Example: priority encoder
+  - May "over-specify" for a functional table based circuit
+  - Can handle complicated conditions
+
+```vhdl
+pc_next <=
+  pc_reg + offset when (state=jump and a=b) else
+  pc_reg + 1 when (state=skip and flag='1') else
+  ...
+```
+
+
+
+# Synthesis Guidelines
+
+
+## Synthesis Guidelines
+
+- Avoid a closed feedback loop in a concurrent signal assignment statement
+- Think of the conditional signal assignment and selected signal assignment statements as routing structures rather than sequential control constructs
+- The conditional signal assignment statement infers a priority routing structure, and a larger number of `when` clauses leads to a long cascading chain
+- The selected signal assignment statement infers a multiplexing structure, and a large number of choices leads to a wide multiplexer
