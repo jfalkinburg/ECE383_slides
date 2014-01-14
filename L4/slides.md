@@ -51,7 +51,7 @@
   - `arith_out <= a + b + c -1;`
 - Implementation of last statment:
 
-**Image**
+![Simple Signal Assignment](simple_signal_assignment.jpg)
 
 
 ## BAD: Simple Assignment with Closed Feedback Loop
@@ -155,7 +155,7 @@ signal_name <=  value_expr_1 when boolean_expr_1 else
                 value_expr_2;
 ```
 
-**Image**
+![2-to-1 Mux](2-to-1_mux.jpg)
 
 
 ## Cascaded Mux Implementation
@@ -167,12 +167,12 @@ signal_name <=  value_expr_1 when boolean_expr_1 else
                 value_expr_4;
 ```
 
-**Image**
+![Cascaded Mux](cascaded_mux.jpg)
 
 
 ## Cascaded Mux Implementation
 
-**Image**
+![Cascaded Mux](cascaded_mux_2.jpg)
 
 
 
@@ -266,12 +266,13 @@ with select_expression select
           value_expr_n when others;
 ```
 
-**Image**
+![Mux Conceptual Implementation](mux_conceptual_implementation.jpg)
 
 
 ## Conceptual Implementation
 
-**Image**
+![Mux Conceptual Implementation](mux_conceptual_implementation_2.jpg)
+
 
 
 # Conditional vs Selected Signal Assignment
