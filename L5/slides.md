@@ -101,7 +101,7 @@ end process;
   - At the rising edge of the clock, the new value of `state_next` sampled and stored into the register
 - Glitches have no effect as long as the `state_next` is stable at the sampling edge
 
-**Image**
+![Synchronous Circuit](synchronous_circuit.jpg)
 
 
 ## D Latch
@@ -117,6 +117,8 @@ begin
   q <= q_latch;
 end process;
 ```
+
+![D Latch](d_latch.jpg)
 
 
 ## D Flip Flop
@@ -142,6 +144,8 @@ end process;
 ```
 
 **Note:** You can use `std_logic_vector` for `d` and `q`.
+
+![D Flip Flop](pos_DFF.jpg)
 
 
 
@@ -199,7 +203,7 @@ begin
 end process;
 ```
 
-**Image**
+![Variable Assignment](variable_assignment.jpg)
 
 
 
@@ -263,12 +267,12 @@ end if_arch;
   - Signals do not need to be assigned in all branches
   - When a signal is unassigned due to omission, it keeps the "previous value" (implying "memory" - Latch / FF)
 
-**Image**
+![Incomplete Branch](incomplete_branch.jpg)
 
 
 ## Incomplete Branch and Incomplete Signal Assignment
 
-**Image**
+![Incomplete Signal Assignment](incomplete_signal_assignment.jpg)
 
 
 ## Conceptual Implementation
@@ -288,7 +292,7 @@ else
 end if;
 ```
 
-**Image**
+![if Implementation](process_if.jpg)
 
 
 ## Conceptual Implementation
@@ -309,7 +313,7 @@ else
 end if;
 ```
 
-**Image**
+![Nested if Implementation](process_nested_if.jpg)
 
 
 
@@ -414,7 +418,7 @@ case case_exp is
 end case;
 ```
 
-**Image**
+![case Implementation](process_case.jpg)
 
 
 
