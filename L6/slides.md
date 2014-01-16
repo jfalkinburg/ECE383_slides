@@ -129,10 +129,10 @@ end sim;
 
 
 
-# VHDL Tools: `record`, `array`, `assert`, `wait`
+# VHDL Tools: record, array, assert, wait
 
 
-## VHDL `record`
+## VHDL record
 
 - A `record` is a collection of elements
   - Similar to a `struct` in C
@@ -155,7 +155,7 @@ my_signal.field_1 <= "Hello World";
 ```
 
 
-## VHDL `array`
+## VHDL array
 
 - Similar to arrays in C
 
@@ -176,7 +176,7 @@ end loop;
 ```
 
 
-## VHDL `assert`
+## VHDL assert
 
 - VHDL `assert` is used to check if _actual_ value is the same as your _expected_ value
 - Severity Levels: `failure`, `error`, `warning`, `note`
@@ -194,7 +194,7 @@ assert my_signal = '0'
 ``` 
 
 
-## VHDL `wait`
+## VHDL wait
 
 - VHDL `wait` can be used to _block_ a process statement
   - `wait;`
@@ -272,10 +272,10 @@ end process;
 
 
 
-# `and` Gate Test Bench Examples
+# and Gate Test Bench Examples
 
 
-## `and` Gate Test Bench (basic)
+## and Gate Test Bench (basic)
 
 ```vhdl
 type and_test_record is record
@@ -312,7 +312,7 @@ end loop
 ```
 
 
-## `and` Gate Test Bench (file I/O)
+## and Gate Test Bench (file I/O)
 
 ```vhdl
 type and_test_record is record
@@ -348,7 +348,7 @@ end process;
 ```
 
 
-## `to_string` Caveat
+## to_string Caveat
 
 - VHDL 2008 added File I/O and string operations for all data types (std_logic, bit, integer, etc.)
 - Xilinx still uses VHDL 1993 for its base libraries
