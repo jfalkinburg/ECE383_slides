@@ -39,6 +39,9 @@
 - Its statements will be executed sequentially until the end of the process
 - For a combinational circuit, _all inputs_ should be included in the sensitivity list
 
+
+## VHDL `process` with Sensitivity List
+
 ```vhdl
 process (sensitivity_list) is
   declarations;
@@ -101,6 +104,9 @@ end process;
   - At the rising edge of the clock, the new value of `state_next` sampled and stored into the register
 - Glitches have no effect as long as the `state_next` is stable at the sampling edge
 
+
+## Synchronous Circuits (Chapter 8)
+
 ![Synchronous Circuit](synchronous_circuit.jpg)
 
 
@@ -143,8 +149,6 @@ begin
 end process;
 ```
 
-**Note:** You can use `std_logic_vector` for `d` and `q`.
-
 ![D Flip Flop](pos_DFF.jpg)
 
 
@@ -175,8 +179,7 @@ begin
   y <= c and d;
 end process;
 ```
-
-What would happen if the three statements were concurrent statements?
+What would happen if the three statements were concurrent?
 
 
 
@@ -191,6 +194,9 @@ What would happen if the three statements were concurrent statements?
 - No time dimension (i.e. no delay)
 - Behave like variables in C
 - Difficult to map to hardware (depending on context)
+
+
+## Variable Assignment Statement
 
 ```vhdl
 process (a, b, c) is 
@@ -282,6 +288,9 @@ end if_arch;
   - One sequential signal assignment in each branch
 - Multiple sequential statements can be constructed recursively
 
+
+## Conceptual Implementation
+
 ```vhdl
 if (boolean_expr) then
   sig_a <= value_expr_a_1;
@@ -312,6 +321,9 @@ else
   end if;
 end if;
 ```
+
+
+## Conceptual Implementation
 
 ![Nested if Implementation](process_nested_if.jpg)
 
@@ -403,6 +415,9 @@ end case;
   - One output signal
   - One sequential signal assignment in each branch
 - Multiple sequential statements can be constructed recursively
+
+
+## Conceptual Implementation
 
 ```vhdl
 case case_exp is
@@ -513,6 +528,10 @@ y <= tmp(3);
   - A statement like `n := n + 1;` can cause great confusion for synthesis
 - Except for the default value, avoid overriding a signal multiple times in a process
 - Think of the `if` and `case` statements as routing structures rather than sequential control constructs
+
+
+## Synthesis Guidelines: Sequential Statements
+
 - An `if` statement infers a priority routing structure, and a larger number of `elsif` branches leads to a long cascading chain
 - A `case` statement infers a multiplexing structure, and a large number of choices leads to a wide multiplexer
 - Think of a `for` loop statement as a mechanism to describe the replicated structure
