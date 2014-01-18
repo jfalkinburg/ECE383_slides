@@ -217,7 +217,7 @@ begin
 end beh1_arch;
 ```
 
-**Note:** "behavioral in VHDL is anything that is not structural.
+**Note:** "behavioral" in VHDL is anything that is not structural.
 
 
 ## Even Detector Behavioral Description

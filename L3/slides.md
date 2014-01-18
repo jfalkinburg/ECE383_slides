@@ -194,7 +194,7 @@ end correct;
 
 ## Identifier
 
-- Identifier is the name of na object
+- Identifier is the name of an object
 - Basic rules:
   - Can only contain alphabetic letters, decimal digits, and underscore
   - The first character must be a letter
