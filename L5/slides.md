@@ -16,10 +16,10 @@
 
 
 
-# VHDL `process`
+# VHDL process
 
 
-## VHDL `process`
+## VHDL process
 
 - Contains a set of sequential statements to be executed sequentially
 - The whole `process` is a concurrent statement
@@ -30,17 +30,17 @@
   - A `process` with a `wait` statement
 
 
-## VHDL `process` with Sensitivity List
+## VHDL process with Sensitivity List
 
 - A process is like a circuit part, which can be:
   - active (known as _activated_)
   - inactive (known as _suspended_)
 - A process is activated when a signal in the sensitivity list changes its value
-- Its statements will be executed sequentially until the end of the process
+- Statements will be executed sequentially until the end of the process
 - For a combinational circuit, _all inputs_ should be included in the sensitivity list
 
 
-## VHDL `process` with Sensitivity List
+## VHDL process with Sensitivity List
 
 ```vhdl
 process (sensitivity_list) is
@@ -60,7 +60,7 @@ end process;
 ```
 
 
-## VHDL `process` With `wait` Statement
+## VHDL process With wait Statement
 
 - Process has no sensitivity list
 - Process continues the execution until a `wait` statement is reached and then suspended
@@ -164,6 +164,9 @@ end process;
 - Caution: inside a process, a signal can be assigned multiple times, but only _the last assignment takes effect_
 - A signal can only be set in _one_ process or combinational statement
 
+
+## Simple Signal Assignment
+
 ```vhdl
 process (a, b, c, d) is
 begin
@@ -213,10 +216,10 @@ end process;
 
 
 
-# `if` Statement
+# if Statement
 
 
-# `if` Statement
+# if Statement
 
 - Syntax
 - Examples
@@ -261,7 +264,7 @@ end if_arch;
 
 - Two statements are the same if there is only one output signal in an `if` statement
 - `if` statement is more flexible
-- Sequential statements can be used in `then`, `elsif`, and `else` branchs:
+- Sequential statements can be used in `then`, `elsif`, and `else` branches:
   - Multiple statements
   - Nested `if` statements
 
@@ -329,10 +332,10 @@ end if;
 
 
 
-# `case` Statement
+# case Statement
 
 
-## `case` Statement
+## case Statement
 
 - Syntax
 - Examples
@@ -361,9 +364,9 @@ begin
     case s is
       when "00" =>
         x <= a;
-      when "00" =>
+      when "01" =>
         x <= b;
-      when "00" =>
+      when "10" =>
         x <= c;
       when others =>
         x <= d;
@@ -437,10 +440,10 @@ end case;
 
 
 
-# Simple `for` Loop Statement
+# Simple for Loop Statement
 
 
-## Simple `for` Loop Statement
+## Simple for Loop Statement
 
 - Syntax
   - VHDL provides a variety of loop constructs
@@ -457,7 +460,7 @@ end loop;
 ```
 
 
-## Reduced `xor` Example
+## Reduced xor Example
 
 ```vhdl
 library ieee;
