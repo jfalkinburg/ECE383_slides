@@ -355,3 +355,4 @@ end process;
 - You must download "additions" VHDL packages:
   - Add them to the "my_ieee" library (or whatever you want to call it)
   - Include/use package.all in both main entity and testbench
+  - http://www.eda.org/fphdl/std_logic_1164_additions.vhdl
