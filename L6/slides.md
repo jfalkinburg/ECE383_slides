@@ -303,9 +303,9 @@ for i in and_test_array'range loop
   wait for 10 ns;
   assert y = and_test_array(i).y
     report "Test #" & to_string(i) & "Failed. (a, b, y, y_expected - (" &
-      to_string(and_test_array(i).a) & ", "
-      to_string(and_test_array(i).b) & ", "
-      to_string(y) & ", "
+      to_string(and_test_array(i).a) & ", " &
+      to_string(and_test_array(i).b) & ", " &
+      to_string(y) & ", " &
       to_string(and_test_array(i).y) & ")"
     severity error;
 end loop
@@ -336,9 +336,9 @@ begin
     wait for 10 ns; 
     assert y = y_expected
       report "Test #" & to_string(i) & "Failed. (a, b, y, y_expected - (" &
-        to_string(a) & ", "
-        to_string(b) & ", "
-        to_string(y) & ", "
+        to_string(a) & ", " &
+        to_string(b) & ", " &
+        to_string(y) & ", " &
         to_string(y_expected) & ")"
       severity error;
   end loop;
