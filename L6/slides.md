@@ -125,7 +125,7 @@ end sim;
 - Pixels generated in sequence
 - Over a period of _more_ than (640*480)=307,200 clock cycles
 
-**Image**
+![Test Pattern](test_pattern.jpg)
 
 
 
