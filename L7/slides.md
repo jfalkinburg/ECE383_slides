@@ -121,7 +121,7 @@ end dec_counter;
 
 ```vhdl
 -- Before "begin"
-component dec_counter is
+component dec_counter
   port(
     clk, reset : in std_logic;
     q : out std_logic_vector(3 downto 0);
