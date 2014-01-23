@@ -25,7 +25,7 @@
   - Divide-and-conquer strategy
   - Divide a system into smaller parts
 
-**Image**
+![Sequential Multiplier](sequential_multiplier.jpg)
 
 
 ## Benefits of Hierarchical Design
@@ -172,7 +172,7 @@ ten_digit: dec_counter
 
 ## Mapping of Constant and Unused Ports
 
-**Image**
+![Constant and Unused Ports](constant_unused_ports.jpg)
 
 
 
@@ -293,7 +293,7 @@ ten_digit: dec_counter
 p100 <= p_one and p_ten; 
 ```
 
-**Image**
+![Decimal Counter](decimal_counter.jpg)
 
 
 
@@ -312,7 +312,7 @@ p100 <= p_one and p_ten;
   - Example: adder with different speed: Fast but large adder or small but slow adder
   - Example: Test bench: descriptions at different stages
 
-**Image**
+![Test Bench](testbench.jpg)
 
 
 ## Configuration
