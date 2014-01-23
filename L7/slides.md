@@ -222,7 +222,7 @@ end arch;vhdl
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
- 
+
 entity mod_n_counter is
    generic(
       N: natural;
@@ -236,6 +236,9 @@ entity mod_n_counter is
    );
 end mod_n_counter;
 ```
+
+
+## Parameterized mod-n Counter
 
 ```vhdl
 architecture arch of mod_n_counter is
@@ -364,7 +367,7 @@ end;
 ## Configuration Specification
 
 - Alternative to creating a new configuration design unit
-- Placed in the “declarations” of your structural VHDL architecture body
+- Placed in the "declarations" of your structural VHDL architecture body
 
 ```vhdl
 for instance_label : component_name
@@ -434,7 +437,7 @@ end vhdl_93_arch;
 - A virtual repository to stored analyzed design units
 - Physical location determined by software
 - Design units can be organized and stored in different libraries
-- Default library: “work”
+- Default library: "work"
 - Non-Default library has to be declared (e.g. IEEE)
 
 ```vhdl
@@ -452,7 +455,7 @@ use entity work.dec_counter(down_arch);
 - Aimed for software hierarchy not hardware hierarchy
 - We only use function 
   - Shorthand for complex expression
-  - “House-keeping tasks; e.g., type conversion 
+  - House-keeping tasks; e.g., type conversion 
 
 ```vhdl
 function func_name(parameter_list) return data_type is
@@ -541,7 +544,7 @@ end util_pkg;
 - Physical partition:
   - Division of the physical implementation
   - Each subsystem is synthesized independently
-- Partition too small: loose optimization opportunity
+- Partition too small: lose optimization opportunity
 - Partition too large: require too much resource
   - e.g. O(n3) algorithm 1000 gates for 1 sec;
   - 35 hours (503 sec) for one 50,000 gate circuit
