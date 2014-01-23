@@ -25,8 +25,7 @@
 - Used mainly used as a controller in a large system
 - Mealy vs. Moore output 
 
-**Image**
-
+![State Machines](state_machines.jpg)
 
 
 # FSM Representation
@@ -36,12 +35,12 @@
 
 - State Diagram
 
-**Image**
+![State Notation](state_notation.jpg)
 
 
 ## Memory Controller State Diagram
 
-**Image**
+![Memory Controller](memory_controller.jpg)
 
 
 
@@ -52,12 +51,14 @@
 
 - Similar to a regular sequential circuit
 
-**Image**
+![State Machines](state_machines.jpg)
+
+![Equations](equations.jpg)
 
 
 ## Timing and Performance of an FSM
 
-**Image**
+![Timing](timing.jpg)
 
 
 
@@ -76,14 +77,14 @@
 
 - A circuit to detect the rising edge of a slow "strobe" input and generate a "short" (about 1-clock period) output pulse.
 
-**Image**
+![Edge Detection Circuit](edge_detect.jpg)
 
 
 ## Example: Edge Detection Circuit
 
 - A circuit to detect the rising edge of a slow "strobe" input and generate a "short" (about 1-clock period) output pulse.
 
-**Image**
+![Edge Detect Timing](edge_detect_timing.jpg)
 
 
 ## Moore vs. Mealy
@@ -129,14 +130,14 @@
 - Use _enumeration_ data type for states
 - Can use Moore _output buffering_ to prevent glitches
 
-**Image**
+![VHDL State Machine](vhdl_state_machine.jpg)
 
 
 ## Example
 
 (see "memory_controller.vhd" Code Example)
 
-**Image**
+![Memory Controller](memory_controller.jpg)
 
 
 
@@ -151,7 +152,7 @@
   - Good assignment reduce the complexity of next-state/output logic
 - Typical assignment – Binary, Gray, one-hot, almost one-hot
 
-**Image**
+![State Assignment](state_assignment.jpg)
 
 
 ## State Assignment in VHDL
@@ -212,7 +213,7 @@ end if;
   - Increase the Tco delay (Tco = Tcq + Toutput)
 - Can we get control signals directly from the register?
 
-**Image**
+![VHDL State Machine](vhdl_state_machine.jpg)
 
 
 ## Clever State Assignment
@@ -223,9 +224,12 @@ end if;
 - Must use explicit state assignment in VHDL code to access individual register bit
 - Difficult to revise and maintain
 
-**Image**
+![Clever Assignment](clever_assignment.jpg)
 
-**Image**
+
+## Clever State Assignment
+
+![Memory Controller](memory_controller.jpg)
 
 
 ## Look-Ahead Output Circuit
@@ -235,4 +239,4 @@ end if;
 - Buffer the next value cancel out the one-clock delay 
 - More systematic and easier to revise and maintain
 
-**Image**
+![Look Ahead](look_ahead.jpg)
