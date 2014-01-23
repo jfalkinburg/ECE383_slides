@@ -527,7 +527,7 @@ use ieee.numeric_std.all;
 
 - **Type Casting** (language primitive) is available between _related_ types
   - `bit`, `std_logic`
-  - `bit_vector`, `std_logic_vector`, `unsigned`, `signed`1
+  - `bit_vector`, `std_logic_vector`, `unsigned`, `signed`
   - `integer`, `natural`, `positive`
 - **Conversion Functions** (library add-ons) must be used when type casting is not available
 - **Best Reference**: C:\Xilinx\xx.x\ISE_DS\vhdl\src
