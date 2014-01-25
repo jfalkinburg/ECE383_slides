@@ -1,6 +1,6 @@
 # ECE383 - Embedded Systems II
 
-## PicoBlax and HW/SW Partitioning
+## PicoBlaze and HW/SW Partitioning
 
 
 
@@ -76,7 +76,7 @@
 ## PicoBlaze Feature Set (KCPSM6)
 
 - The next few slides are extracted from the manual
-- Read the manual!  Some “goodies” include:
+- Read the manual!  Some "goodies" include:
   - Sample VHDL code for input/output ports
   - Detailed port descriptions
   - Detailed description of assembly instructions
@@ -185,7 +185,7 @@ Iterate through this process a few times.  Start simple!
 
 ## Dividing Between HW and SW
 
-- Partitioning – Grouping of specific sets of instructions in an application and then mapping those groups to either hardware or software.
+- Partitioning - Grouping of specific sets of instructions in an application and then mapping those groups to either hardware or software.
 - Profile – collect run-time information on an application during execution for a given set of inputs.
   - Type of information collected
     - Execution time
@@ -201,7 +201,7 @@ Iterate through this process a few times.  Start simple!
 - Decompose the problem and draw a hierarchy of components
 - If possible, profile a pure software implementation
   - Group components into individual functions
-  - Find the “bottleneck” functions and attempt to parallelize
+  - Find the "bottleneck" functions and attempt to parallelize
 - Divide components into hardware and software implementation categories
   - Hardware (expensive to develop/test, great area/power/speed)
     - Hard area/power/speed requirements
@@ -218,6 +218,9 @@ Iterate through this process a few times.  Start simple!
 - Applies law of diminishing returns to the usefulness of a single architecture feature
 
 **Image**
+
+
+## Amdahl's Law
 
 - **Example 1**: Suppose an enhancement that makes a portion of Machine A runs 500 times faster than the original.  The portion makes up 20% of the machine.  What is the overall speedup?
 - **Example 2**: After benchmarking a certain computer algorithm, you find that a certain for loop takes 80% of the execution time.  You calculate that a hardware implementation of this loop will execute 100 times faster.  How much faster will this algorithm run with the hardware accelerator?
