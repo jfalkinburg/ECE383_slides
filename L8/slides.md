@@ -150,7 +150,7 @@
 - In a synchronous FSM
   - All assignments work
   - Good assignment reduce the complexity of next-state/output logic
-- Typical assignment – Binary, Gray, one-hot, almost one-hot
+- Typical assignment - Binary, Gray, one-hot, almost one-hot
 
 ![State Assignment](state_assignment.jpg)
 
@@ -182,7 +182,6 @@ if (reset = '1') then
 else
     state_reg <= idle;
 end if;
- 
 ```
 
 
@@ -235,7 +234,7 @@ end if;
 ## Look-Ahead Output Circuit
 
 - Output buffer introduces one-clock delay
-- The “next” value of Moore output can be obtained by using state_next signal 
+- The "next" value of Moore output can be obtained by using `state_next` signal 
 - Buffer the next value cancel out the one-clock delay 
 - More systematic and easier to revise and maintain
 
