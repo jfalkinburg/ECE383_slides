@@ -5,6 +5,7 @@
 
 
 # Lesson Outline
+
 - Software on an FPGA
 - PicoBlaze Overview
 - HW and SW Partitioning
