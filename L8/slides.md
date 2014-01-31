@@ -69,7 +69,7 @@
 ## Moore vs. Mealy
 
 - **Moore machine**: output is a function of state
-- **Mealy machine**: output function of state and output
+- **Mealy machine**: output function of state and inputs
 - From theoretical point of view, both machines have similar "computation capability"
 - Implication of FSM as a controller?
 
@@ -306,11 +306,6 @@ end if;
 - Difficult to revise and maintain
 
 ![Clever Assignment](clever_assignment.jpg)
-
-
-## Clever State Assignment
-
-![Memory Controller](memory_controller.jpg)
 
 
 ## Look-Ahead Output Circuit
