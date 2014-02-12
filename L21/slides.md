@@ -46,11 +46,14 @@
 ## PicoBlaze Overview
 
 - 8-Bit Xilinx Microprocessor
-- 26 Spartan-6 Slices – Can use lots of them in a single design!
+- 26 Spartan-6 Slices - Can use lots of them in a single design!
 - Up to 4096 instructions (configurable)
 - 105 MHz on Spartan 6 (-2)
-- 52 – 119 MIPS
-- Can go to “sleep”
+- 52 - 119 MIPS
+- Can go to "sleep"
+
+
+## PicoBlaze Overview
 
 ![PicoBlaze Overview](picoblazeOverview.jpg)
 
@@ -84,7 +87,7 @@
   - Example assembly code
 
 
-## PicoBlaze Architecture Set (KCPSM6)
+## PicoBlaze Architecture (KCPSM6)
 
 ![PicoBlaze Architecture](picoblazeArchitecture.jpg)
 
@@ -125,6 +128,9 @@
 - SUB, SUBC
 - TEST
 
+
+## Assembly Instructions
+
 ![openPICIDE Instructions](openPICIDEinstructions.jpg)
 
 
@@ -162,7 +168,7 @@ In hardware simulation, you can even view the opcode in plain text!
 
 ## Hardware Simulation
 
-**Image**
+![Hardware Simulation](hardwareSimulation2.jpg)
 
 
 ## PicoBlaze Development Process
