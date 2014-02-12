@@ -36,7 +36,7 @@
 - HDL Simulation to test software and hardware interfaces
 - Compile/Assemble code and store in program memory accessible from FPGA
 
-**Image**
+![OpenPICIDE](openPICIDE.jpg)
 
 
 
@@ -52,14 +52,14 @@
 - 52 – 119 MIPS
 - Can go to “sleep”
 
-**Image**
+![PicoBlaze Overview](picoblazeOverview.jpg)
 
 
 ## PicoBlaze on Spartan 3E-500
 
 - Less than 1% utilization
 
-**Image**
+![PicoBlaze on Spartan3E](picoblazeOnSpartan3E.jpg)
 
 
 ## PicoBlaze Feature Set (KCPSM6)
@@ -84,9 +84,9 @@
   - Example assembly code
 
 
-## PicoBlaze Feature Set (KCPSM6)
+## PicoBlaze Architecture Set (KCPSM6)
 
-**Image**
+![PicoBlaze Architecture](picoblazeArchitecture.jpg)
 
 
 ## Read and Write Strobes (KCPSM6)
@@ -95,17 +95,17 @@
   - read_strobe – high for one clock cycle after data read in
   - write_strobe – high for one clock cycle after data written out
 
-**Image**
+![Read and Write Strobes](read_write_strobes.jpg)
 
 
 ## Design of Output Ports (KCPSM6)
 
-**Image**
+![Output Ports](outputPorts.jpg)
 
 
 ## Design of Input Ports (KCPSM6)
 
-**Image**
+![Input Ports](inputPorts.jpg)
 
 
 ## Assembly Instructions
@@ -125,7 +125,7 @@
 - SUB, SUBC
 - TEST
 
-**Image**
+![openPICIDE Instructions](openPICIDEinstructions.jpg)
 
 
 ## PicoBlaze Example
@@ -150,12 +150,12 @@ How do we simulate the software?  Hardware?
 
 ## openPICIDE Configuration
 
-**Image**
+![openPICIDE Configuration](openPICIDEconfig.jpg)
 
 
 ## Hardware Simulation
 
-**Image**
+![Hardware Simulation](hardwareSimulation.jpg)
 
 In hardware simulation, you can even view the opcode in plain text!
 
@@ -218,7 +218,7 @@ Iterate through this process a few times.  Start simple!
 - Important equation for computer architecture
 - Applies law of diminishing returns to the usefulness of a single architecture feature
 
-**Image**
+![Amdahl's Law](amdahls.jpg)
 
 
 ## Amdahl's Law
@@ -230,4 +230,4 @@ Iterate through this process a few times.  Start simple!
 
 ## Decomposing Problem (Asteroids Game)
 
-**Image**
+![Asteroids Decomposition](asteroids.jpg)
