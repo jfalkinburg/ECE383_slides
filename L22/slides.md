@@ -279,4 +279,4 @@
 - The OFFSET IN constraint covers paths from input pads to synchronous elements
 - The OFFSET OUT constraint covers paths from synchronous elements to input pads
 
-![Offset In/Out Constraints](offset_in_out_constraints.jpg)
+![Offset In/Out Constraints](offset-in-out-constraints.jpg)
