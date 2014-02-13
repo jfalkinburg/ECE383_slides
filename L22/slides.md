@@ -25,18 +25,21 @@
 
 ## Xilinx FPGA Architecture - Overview
 
-- Modern FPGA’s contain hardware-dedicated resources to for commonly used functions.
+- Modern FPGA's contain hardware-dedicated resources to for commonly used functions.
 - Improves performance
 - Reduces area and power use
 - 7-Series Architecture Features
-  - Logic (“FPGA Fabric”)
+  - Logic ("FPGA Fabric")
   - Interconnect
   - Block/Distributed RAM
   - SelectIO/CMT
   - DSP Slices
   - Serial Transceiver
 
-**Image**
+
+## Xilinx FPGA Architecture - Overview
+
+![FPGA Architecture](fpga_arch.jpg)
 
 
 ## Xilinx FPGA Architecture - CLB Structure
@@ -50,7 +53,10 @@
 - Two flip-flops per LUT
   - Excellent for heavily pipelined designs
 
-**Image**
+
+## Xilinx FPGA Architecture - CLB Structure
+
+![CLB Structure](clb_structure.jpg)
 
 
 ## Xilinx FPGA Architecture - Slice Structure
@@ -63,7 +69,10 @@
   - Carry Logic
   - Sequential Elements
 
-**Image**
+
+## Xilinx FPGA Architecture - Slice Structure
+
+![Slice Structure](slice_structure.jpg)
 
 
 ## Xilinx FPGA Architecture - Block RAM
@@ -78,20 +87,26 @@
   - 64-bit error correction coding per 36K block
   - Adjacent blocks combine to 64K x 1 without extra logic
 
-**Image**
+
+## Xilinx FPGA Architecture - Block RAM
+
+![Block RAM](block_ram.jpg)
 
 
 ## Xilinx FPGA Architecture - Distributed RAM
 
 - Synchronous write
-- Asynchronous read – but can be made into synchronous read
-- RAM/ROM are initialized during configuration – data can be written to RAM after configuration
+- Asynchronous read - but can be made into synchronous read
+- RAM/ROM are initialized during configuration - data can be written to RAM after configuration
 - Emulated dual-port RAM
   - One read/write port
   - One read-only port
 - Implemented using LUTs
 
-**Image**
+
+## Xilinx FPGA Architecture - Distributed RAM
+
+![Distributed RAM](distributed_ram.jpg)
 
 
 ## Xilinx 7-Series Architecture - Input / Output Blocks (SelectIO)
@@ -108,20 +123,28 @@
   - Registered I/O
   - Various Voltage levels
 
-**Image**
+
+## Xilinx 7-Series Architecture - Input / Output Blocks (SelectIO)
+
+![Input / Output Blocks](io_blocks.jpg)
 
 
 ## Xilinx FPGA Architecture - CMT/DCM
 
-- Former: Digital Clock Manager (DCM)
-- Current: Clock Management Tile (CMT)
-- Purpose:
+- **Former**: Digital Clock Manager (DCM)
+- **Current**: Clock Management Tile (CMT)
+- **Purpose**:
   - Reduce clock skew through feedback (PLL/DLL)
   - Generate new frequencies that are a multiple/divisor of current frequency (e.g. clk*4/8)
   - Phase shift clock
   - Dedicated routing to all flip flops in within clock region to minimize clock skew
 
-**Image**
+
+## Xilinx FPGA Architecture - CMT/DCM
+
+![CMT / DCM](cmt_dcm_1.jpg)
+
+![CMT / DCM](cmt_dcm_2.jpg)
 
 
 ## Xilinx FPGA Architecture - DSP Slice
@@ -139,12 +162,15 @@
   - 17-bit shifter
   - Dynamic operation (cycle by cycle)
 
-**Image**
+
+## Xilinx FPGA Architecture - DSP Slice
+
+![DSP Slice](dsp_slice.jpg)
 
 
 ## Xilinx FPGA Architecture - Other Features
 
-**Image**
+![Other Features](other_features.jpg)
 
 
 
@@ -180,12 +206,17 @@
 - “Optimize for Power” when using CoreGen tools
 - Use resets only when necessary, use synchronous resets
 
-**Equation**
+![Dynamic Power Equation](dynamic_power_eq.jpg)
+
+- `n` = number of toggling nodes
+- `C` = capacitance
+- `V` = voltage swing
+- `f` = toggle frequency
 
 
 ## Optimizing for Power
 
-**Image**
+![Optimizing for Power](optimizing_for_power.jpg)
 
 
 
@@ -197,7 +228,7 @@
 - Without global timing constraints
   - Logic tends to be grouped to improve internal timing at the expense of I/O timing
 
-**Image**
+![Without Global Timing Constraints](speed_without_global.jpg)
 
 
 ## Optimizing for Speed - Use Global Timing Constraints
@@ -206,7 +237,8 @@
   - All timing paths are evaluated
   - I/O paths are improved (CLBs are place closer to I/O pins)
 
-**Image**
+![With Global Timing Constraints](speed_with_global.jpg)
+
 
 ## Optimzing for Speed - Logic Levels and Delay
 
@@ -229,7 +261,7 @@
 - Make your designs _parallel_ - cascading logic (e.g., priority multiplexer) significantly slows down your design
 - _Pipeline_ your design to reduce longest path and therefore increase maximum clock speed.
 
-**Image**
+![Timing Constraints](timing_constraints.jpg)
 
 
 ## Optimizing for Speed - PERIOD Constraint
@@ -239,7 +271,7 @@
   - There are five synchronous elements (all FFs) attach to the clock which means there are five path endpoints, in this case
   - There are three delay paths constrained between those five FFs
 
-**Image**
+![Period Constraint](period_constraint.jpg)
 
 
 ## Optimizing for Speed - OFFSET IN/OUT Constraints
@@ -247,7 +279,4 @@
 - The OFFSET IN constraint covers paths from input pads to synchronous elements
 - The OFFSET OUT constraint covers paths from synchronous elements to input pads
 
-**Image**
-
-`offset = IN 10 ns BEFORE "clk";`
-`offset = OUT 10 ns BEFORE "clk";`
+![Offset In/Out Constraints](offset_in_out_constraints.jpg)
