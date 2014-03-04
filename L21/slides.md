@@ -18,8 +18,8 @@
 ## Software on an FPGA
 
 - Types of CPUs
-  - Hard Core CPU – CPU is custom built/fabricated on the same die as the FPGA.
-  - Soft Core CPU – CPU is built with CLBs and other standard FPGA components
+  - Hard Core CPU - CPU is custom built/fabricated on the same die as the FPGA.
+  - Soft Core CPU - CPU is built with CLBs and other standard FPGA components
   - Xilinx
     - PicoBlaze (8-bit Soft-Core CPU)
     - MicroBlaze (32-bit Soft-Core CPU)
