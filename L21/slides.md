@@ -46,7 +46,8 @@
 ## PicoBlaze Overview
 
 - 8-Bit Xilinx Microprocessor
-- 26 Spartan-6 Slices - Can use lots of them in a single design!
+- 26 Spartan-6 Slices
+  - Can use lots of PicoBlaze cores in a single design!
 - Up to 4096 instructions (configurable)
 - 105 MHz on Spartan 6 (-2)
 - 52 - 119 MIPS
@@ -95,8 +96,8 @@
 ## Read and Write Strobes (KCPSM6)
 
 - 256 input ports, 256 output ports
-  - read_strobe – high for one clock cycle after data read in
-  - write_strobe – high for one clock cycle after data written out
+  - `read_strobe` - high for one clock cycle after data read in
+  - `write_strobe` - high for one clock cycle after data written out
 
 ![Read and Write Strobes](read_write_strobes.jpg)
 
@@ -193,14 +194,14 @@ Iterate through this process a few times.  Start simple!
 ## Dividing Between HW and SW
 
 - Partitioning - Grouping of specific sets of instructions in an application and then mapping those groups to either hardware or software.
-- Profile – collect run-time information on an application during execution for a given set of inputs.
+- Profile - collect run-time information on an application during execution for a given set of inputs.
   - Type of information collected
     - Execution time
     - Resource usage (CPU cycles, memory, hardware, etc.)
   - Variety of tools available
-    - gprof – Unix command-line tool
-    - time – Unix command-line tool
-    - tic/toc – MATLAB command-line tool
+    - `gprof` - Unix command-line tool
+    - `time` - Unix command-line tool
+    - `tic/toc` - MATLAB command-line tool
 
 
 ## Decomposition Steps
@@ -225,13 +226,6 @@ Iterate through this process a few times.  Start simple!
 - Applies law of diminishing returns to the usefulness of a single architecture feature
 
 ![Amdahl's Law](amdahls.jpg)
-
-
-## Amdahl's Law
-
-- **Example 1**: Suppose an enhancement that makes a portion of Machine A runs 500 times faster than the original.  The portion makes up 20% of the machine.  What is the overall speedup?
-- **Example 2**: After benchmarking a certain computer algorithm, you find that a certain for loop takes 80% of the execution time.  You calculate that a hardware implementation of this loop will execute 100 times faster.  How much faster will this algorithm run with the hardware accelerator?
-- **Example 3**: If a given part of an algorithm takes up 80% of the execution time, what is the theoretical maximum speedup you can achieve with a hardware accelerator?
 
 
 ## Decomposing Problem (Asteroids Game)
