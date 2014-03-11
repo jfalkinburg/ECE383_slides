@@ -15,8 +15,9 @@
 ## Documentation
 
 - Most of the images and notes in this presentation are taken from:
-  - Xilinx University Program [1]
-  - Xilinx Online FPGA Design Training [2]
+  - [Xilinx University Program](http://www.xilinx.com/support/university/index.htm)
+  - [Xilinx Online FPGA Design
+    Training](http://www.xilinx.com/training/interactive-online-fpga-training.htm)
 
 
 
@@ -25,7 +26,7 @@
 
 ## Xilinx FPGA Architecture - Overview
 
-- Modern FPGA's contain hardware-dedicated resources to for commonly used functions.
+- Modern FPGA's contain hardware-dedicated resources for commonly used functions.
 - Improves performance
 - Reduces area and power use
 - 7-Series Architecture Features
@@ -51,7 +52,6 @@
   - Consistent with previous architectures
   - Single LUT in Slice_M can be a 32-bit shift register or 64 x 1 RAM (Distributed RAM)
 - Two flip-flops per LUT
-  - Excellent for heavily pipelined designs
 
 
 ## Xilinx FPGA Architecture - CLB Structure
@@ -186,7 +186,6 @@
   - Resource Sharing
   - Use IOB’s registers
   - Combine LUTs
-  - Do not preserve hierarchy (do this last and only if needed)
 - "Optimize for Area" when using CoreGen tools
 - Use resets only when necessary, use synchronous resets
 
