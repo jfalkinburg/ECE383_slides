@@ -79,13 +79,8 @@
 
 - Synchronous read and write capability
 - True dual-port memory
-- Built-in FIFO logic
 - Supports initial values and parity bits
-- Situated next to embedded multiplier for fast multiply-accumulate operations
 - 36K/18K block RAM
-  - 32k x 1 to 512 x 72 in one 36K block
-  - 64-bit error correction coding per 36K block
-  - Adjacent blocks combine to 64K x 1 without extra logic
 
 
 ## Xilinx FPGA Architecture - Block RAM
@@ -111,10 +106,6 @@
 
 ## Xilinx 7-Series Architecture - Input / Output Blocks (SelectIO)
 
-- Extension of logic layer functionality
-  - Wider input/output SERDES
-  - Addition of independent ODELAY
-  - Phaser, IO FIFO, IO PLL
 - Supports dozens of IO standards
   - Single (PCI, CMOS, TTL, I2C, etc.)
   - Differential (TMDS, Display Port, etc.)
@@ -166,11 +157,6 @@
 ## Xilinx FPGA Architecture - DSP Slice
 
 ![DSP Slice](dsp_slice.jpg)
-
-
-## Xilinx FPGA Architecture - Other Features
-
-![Other Features](other_features.jpg)
 
 
 
