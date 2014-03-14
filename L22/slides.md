@@ -59,22 +59,6 @@
 ![CLB Structure](clb_structure.jpg)
 
 
-## Xilinx FPGA Architecture - Slice Structure
-
-- Local routing provides connection between slices in the same CLB, and it provides routing to neighboring CLBs
-- Carry logic runs vertically, between slices and CLBs
-- Other resources on slice:
-  - LUTs
-  - MUXs with dedicated routing
-  - Carry Logic
-  - Sequential Elements
-
-
-## Xilinx FPGA Architecture - Slice Structure
-
-![Slice Structure](slice_structure.jpg)
-
-
 ## Xilinx FPGA Architecture - Block RAM
 
 - Synchronous read and write capability
@@ -90,13 +74,13 @@
 
 ## Xilinx FPGA Architecture - Distributed RAM
 
+- Implemented using LUTs
 - Synchronous write
 - Asynchronous read - but can be made into synchronous read
 - RAM/ROM are initialized during configuration - data can be written to RAM after configuration
 - Emulated dual-port RAM
   - One read/write port
   - One read-only port
-- Implemented using LUTs
 
 
 ## Xilinx FPGA Architecture - Distributed RAM
@@ -131,13 +115,6 @@
   - Dedicated routing to all flip flops in within clock region to minimize clock skew
 
 
-## Xilinx FPGA Architecture - CMT/DCM
-
-![CMT / DCM](cmt_dcm_1.jpg)
-
-![CMT / DCM](cmt_dcm_2.jpg)
-
-
 ## Xilinx FPGA Architecture - DSP Slice
 
 - 7-Series Architecture DSP Slice Features:
@@ -170,7 +147,7 @@
 - Pay attention to synthesizer messages (e.g., could not infer block/distributed RAM due to a coding style mistake)
 - "Optimize for Area" during synthesis and implementation
   - Resource Sharing
-  - Use IOB’s registers
+  - Use IOB's registers
   - Combine LUTs
 - "Optimize for Area" when using CoreGen tools
 - Use resets only when necessary, use synchronous resets
@@ -187,8 +164,8 @@
   - Block RAM
 - Use the Chip Enable signals for flip-flops
 - Use Xilinx tools to estimate power usage for various settings
-- “Optimize for Power” during synthesis and implementation
-- “Optimize for Power” when using CoreGen tools
+- "Optimize for Power" during synthesis and implementation
+- "Optimize for Power" when using CoreGen tools
 - Use resets only when necessary, use synchronous resets
 
 ![Dynamic Power Equation](dynamic_power_eq.jpg)
@@ -242,7 +219,7 @@
 
 - The combination of the interconnect and the LUT forms a logic level
 - Lower speed grade devices operate slower (longer LUT delays)
-- 50/50 rule is typically used – 50% of delay is from LUT, 50% from routing delay
+- 50/50 rule is typically used - 50% of delay is from LUT, 50% from routing delay
 - Make your designs _parallel_ - cascading logic (e.g., priority multiplexer) significantly slows down your design
 - _Pipeline_ your design to reduce longest path and therefore increase maximum clock speed.
 
