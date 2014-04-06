@@ -95,11 +95,14 @@ outp <= q + 1 when (r > 3) else
 ## Overview of FSMD
 
 - Basic form:
-  - ![Equation 1](equation1.jpg)
+
+![Equation 1](equation1.jpg)
+
 - Interpretation:
 - At the rising edge of the clock, the output of registers `r_src1`, `r_src2`, etc. are available
 - Outputs are passed to a combinational circuit that performs `f(...)`
 - At the next rising edge of the clock, result is stored into `r_dest`
+
 ![Equation 2](equation2.jpg)
 
 
@@ -123,6 +126,10 @@ outp <= q + 1 when (r > 3) else
   - State transition is on clock-by-clock basis
   - FSM can enforce order of execution
   - FSM allows branches on execution sequence
+
+
+## FSM as a Control Path
+
 - Normally represented in an extended ASM chart known as ASMD (ASM with datapath) chart
 
 ![Control Path](control_path.jpg)
@@ -157,6 +164,11 @@ else
 return r; 
 ```
 
+
+## FSMD Design - Repetitive-Addition Multiplier
+
+- Basic algorithm:  7*5 = 7+7+7+7+7
+
 ```vhdl
 -- ASMD-friendly code
 if ((a_in = 0) or (b_in = 0)) then
@@ -187,6 +199,9 @@ stop: return r;
 - ASMD chart
   - Default RT operation: keep the previous value 
   - Note the parallel execution in op state
+
+
+## FSMD Design - Repetitive-Addition Multiplier
 
 ```vhdl
 if ((a_in = 0) or (b_in = 0)) then
@@ -245,6 +260,9 @@ Circuit associated with `r` register:
   - Various code segments can be combined 
   - Should always separate registers from combinational logic
   - May be a good idea to isolate the main functional units
+
+
+## FSMD Design - Repetitive-Addition Multiplier
 
 ![Schematic](schematic.jpg)
 
