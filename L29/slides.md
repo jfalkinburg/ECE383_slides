@@ -36,8 +36,8 @@
 - Problems with dataflow implementation: 
   - Can only be applied to trivial algorithm 
   - Not flexible
-    - Can we just share one adder in a time-multiplexing fashion to save hardware resources
-    - What happen if input size is not fixed (i.e., size is determined by an external input)
+    - Can we just share one adder in a time-multiplexing fashion to save hardware resources?
+    - What happen if input size is not fixed (i.e., size is determined by an external input)?
 
 
 ## Dataflow Example
@@ -46,6 +46,11 @@
   - Sum 4 numbers
   - Divide the result by 8
   - Round the final result
+
+![Dataflow](dataflow.jpg)
+
+
+## Dataflow Example
 
 ```vhdl
 size = 4;
@@ -72,8 +77,6 @@ outp <= q + 1 when (r > 3) else
         q; 
 ```
 
-**Image**
-
 
 ## Register Transfer Methodology
 
@@ -92,23 +95,26 @@ outp <= q + 1 when (r > 3) else
 ## Overview of FSMD
 
 - Basic form:
-  - **(equation)**
+  - ![Equation 1](equation1.jpg)
 - Interpretation:
-- At the rising edge of the clock, the output of registers , , etc. are available
-- Outputs are passed to a combinational circuit that performs 
-- At the next rising edge of the clock, result is stored into 
-  - **(equation)**
-  - **(equation)**
+- At the rising edge of the clock, the output of registers `r_src1`, `r_src2`, etc. are available
+- Outputs are passed to a combinational circuit that performs `f(...)`
+- At the next rising edge of the clock, result is stored into `r_dest`
+![Equation 2](equation2.jpg)
 
 
 ## Implementation Example - Single RT Operation
 
-**Image**
+![Equation - Single RT](equation_singleRT.jpg)
+
+![Timing](timing.jpg)
 
 
 ## Implementation Example - Multiple RT Operations
 
-**Image**
+![Equation - Multiple RT](equation_multipleRT.jpg)
+
+![Circuit](circuit_multipleRT.jpg)
 
 
 ## FSM as a Control Path
@@ -119,14 +125,14 @@ outp <= q + 1 when (r > 3) else
   - FSM allows branches on execution sequence
 - Normally represented in an extended ASM chart known as ASMD (ASM with datapath) chart
 
-**Image**
+![Control Path](control_path.jpg)
 
-**Note:** New value of r1 is only available when the FSM _exits_ s1 state.
+**Note:** New value of `r1` is only available when the FSM _exits_ `s1` state.
 
 
 ## Basic Block Diagram of FSMD
 
-**Image**
+![FSMD Block Diagram](fsmd_block.jpg)
 
 
 
@@ -198,7 +204,10 @@ op:   r = r + a;
 stop: return r;
 ```
 
-**Image**
+
+## FSMD Design - Repetitive-Addition Multiplier
+
+![FSMD Multiplier](fsmd_multiplier.jpg)
 
 
 ## FSMD Design - Repetitive-Addition Multiplier
@@ -226,7 +235,7 @@ stop: return r;
 
 Circuit associated with `r` register:
 
-**Image**
+![Circuit](multiplier_circuit.jpg)
 
 
 ## FSMD Design - Repetitive-Addition Multiplier
@@ -237,7 +246,7 @@ Circuit associated with `r` register:
   - Should always separate registers from combinational logic
   - May be a good idea to isolate the main functional units
 
-**Image**
+![Schematic](schematic.jpg)
 
 
 
@@ -253,14 +262,14 @@ Circuit associated with `r` register:
   - Control signals needed at late stage 
   - Status signal available at early stage 
 
-**Image**
+![Block Diagram](performance_block.jpg)
 
 
 ## Timing and Performance Analysis of FSMD
 
-**Image**
+![Timing Analysis](timing_analysis.jpg)
 
-**Equations**
+![Timing Equations](timing_equations.jpg)
 
 
 ## Timing and Performance Analysis of FSMD
@@ -277,7 +286,10 @@ Circuit associated with `r` register:
   - N-bit input: 
     - Worst: K=2+2*(2n-1)
 
-**Image**
+
+## Timing and Performance Analysis of FSMD
+
+![Operations](ops_block.jpg)
 
 
 
