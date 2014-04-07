@@ -31,6 +31,7 @@
 
 **Image**
 
+
 ## Propagation Delay - System Delay
 
 - *System Delay* - the longest path (input to output) in the system
@@ -83,6 +84,7 @@ Writing better RTL code
   - *Static hazard* - glitch when the signal should be stable
   - *Dynamic hazard* - a glitch in transition
 - Due to the multiple converging paths of an output port
+
 
 
 # Sequential Timing Analysis
