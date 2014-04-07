@@ -232,6 +232,10 @@ stop: return r;
   - Group RT operation according to the destination register
   - Add combinational circuit/mux 
   - Add status circuits
+
+
+## FSMD Design - Repetitive-Addition Multiplier
+
 - RT operations with the
   - `r` register
     -  (in the `idle` state)
