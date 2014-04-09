@@ -1,44 +1,161 @@
 # ECE383 - Embedded Systems II
 
-## Clock and Synchronization
+## Timing Analysis
 
 
 
 # Lesson Outline
 
-- Clock Distribution Network and Skew
-- Multiple Clock System
-- Metastability and Synchronization Failure
-- Synchronizer
+- Combinational Timing Considerations
+- Sequential Timing Analysis
 - Synthesis Guidelines
 
 
 
-# Clock Distribution Network and Skew
+# Combinational Timing Considerations
 
 
-## Clock Distribution Network and Skew
+## Combinational Timing Considerations
+
+- Propagation delay
+- Synthesis with timing constraint
+- Hazards
+- Delay-sensitive design
+
+
+## Propagation Delay - Overview
+
+- *Delay* - time required to propagate a signal from an input port to a output port
+- *Cell-level delay* - most accurate
+- The impact of wire becomes more dominant
+- Delay components:
+  - Time required for transistors to change state
+  - Output impedance of an individual cell
+  - Summation of parasitic capacitances of wires and input capacitances for load cells
+
+![Delay](delay.jpg)
+
+
+## Propagation Delay - System Delay
+
+- *System Delay* - the longest path (input to output) in the system
+- *False path* - a path along which a signal cannot actually propagate
+- Difficult if the design is mainly "random" logic
+- Critical path can be identified if many complex operators (such as adders or multipliers) are used in the design.
+
+![Critical Path](gates_critical_path.jpg)
+
+
+## Propagation Delay - System Delay
+
+![Critical Path](clouds_critical_path.jpg)
+
+
+## Synthesis with Timing Constraint
+
+- Multi-level synthesis is flexible
+- It is possible to reduce by delay by adding extra logic
+- Synthesis with timingconstraint:
+  1. Obtain the minimal-area implementation
+  2. Identify the critical path
+  3. Reduce the delay by adding extra logic
+  4. Repeat 2 & 3 until meeting the constraint
+
+
+## Synthesis with Timing Constraint
+
+![Optimizations](optimizations.jpg)
+
+
+## Synthesis with Timing Constraint
+
+Area-Delay Trade-Off Curve
+
+![Area-Delay Trade-Off Curve](area_delay_tradeoff.jpg)
+
+
+## Synthesis with Timing Constraint
+
+Writing better RTL code
+
+![Better RTL Code](better_rtl_code.jpg)
+
+
+## Timing Hazards
+
+- *Propagation delay* - time to obtain a stable output
+- *Hazards* - the fluctuation occurring during the transient period
+  - *Static hazard* - glitch when the signal should be stable
+  - *Dynamic hazard* - a glitch in transition
+- Due to the multiple converging paths of an output port
+
+
+## Timing Hazards - Static Hazard
+
+![Static Hazard](static_hazard.jpg)
+
+
+## Timing Hazards - Dynamic Hazard
+
+![Dynamic Hazard](dynamic_hazard.jpg)
+
+
+## Timing Hazards - Dealing with Hazards
+
+- Some hazards can be eliminated in theory (e.g. use redundant K-map terms)
+  - Eliminating glitches is very difficult in reality, and almost impossible for synthesis
+  - Multiple inputs can change simultaneously (e.g. 1111 -> 0000 in a counter)
+  - During logic synthesis, the logic expressions will be rearranged and optimized
+  - During technology mapping, generic gates will be re-mapped
+  - During placement & routing, wire delays may change
+- How to deal withit?
+  - Ignore glitches in the transient period and retrieve the data after the signal is stabilized
+  - Synchronous Design! - but now we have to deal with setup and hold time constraints
 
 
 
-# Multiple Clock System
+# Sequential Timing Analysis
 
 
-## Multiple Clock System
+## Sequential Timing Analysis
+
+- *Combinational Circuit* - characterized by propagation delay
+- *Sequential Circuit*
+  - Has to satisfy setup/hold time constraints
+  - Characterized by maximal clock rate (e.g. 200 MHz Counter, 3.4 GHz Intel Core i7)
+  - Embedded in clock rate
+    - Setup time
+    - clock-to-Q delay of a register
+    - Propagation delay of next-state logic
+
+![Sequential Timing](sequential_timing.jpg)
 
 
+## Sequential Timing Analysis - Setup Time Violation
 
-# Metastability and Synchronization Failure
-
-
-## Metastability and Synchronization Failure
+![Setup Time Violation](setup_violation.jpg)
 
 
+## Sequential Timing Analysis - Setup Time Violation Consequences
 
-# Synchronizer
+![Setup Time Violation Consequences](violation_consequences.jpg)
 
 
-## Synchronizer
+## Sequential Timing Analysis - Shift Register Example
+
+![Shift Register Example](shift_register.jpg)
+
+
+## Sequential Timing Analysis - Hold Time Violation
+
+![Hold Time Violation](hold_violation.jpg)
+
+We don't need to worry about hold time requirements unless the clock edge does not arrive at all Flip Flops at the same time
+
+
+## Sequential Timing Analysis - Output Delay
+
+![Output Delay](output_delay.jpg)
 
 
 
@@ -47,40 +164,9 @@
 
 ## Synthesis Guidelines
 
-**Section 9.5**
-
-- Asynchronous reset, if used, should be only for system initialization.  It should not be used to clear the registers during regular system operation
-- Do not manipulate or gate the clock signal.  Most desired operations can be achieved by using a register with an enable signal
-- LFSR is an effective way to construct a counter.  It can be used when the counting patterns are not important
-- Throughput and delay are two performance criteria.  Adding a pipeline to a combinational circuit can increase the throughput but not reduce the delay
-- The main task of adding a pipeline to acombinatioralcircuit is to divide the circuit into balanced stages.  Software with retiming capability can aid in this task
-
-
-## Synthesis Guidelines
-
-**Section 16.11 - Use of a Clock**
-
-- Do Not manipulate the clock signal in regular RTL design and synthesis
-- Minimize the number of clock signals in a system
-- Minimize the number of clock domains (i.e. the number of independent clock signals).  Use a derived clock signal when possible
-- If a derived clock signal is needed, manually derive and instantiate the circuit and separate it from the regular synthesis
-
-
-## Synthesis Guidelines
-
-**Section 16.11 - Synchronizer Guidelines**
-
-- Synchronize a signal in a single place
-- Avoid synchronizing related signals
-- Use a glitch-free signal for synchronization
-- Reanalyze and examine the synchronizer and MTBF when the device is changed or the clock rate is revised
-
-
-## Synthesis Guidelines
-
-**Section 16.11 - Interface Between Clock Domains**
-
-- Clearly identify the boundary of the clock domain and the signals that cross the domain
-- Separate the synchronization circuits and asynchronous interface from the synchronous subsystems, and instantiate them as individual modules
-- Use a reliable synchronizer design to provide sufficient metastability resolution time
-- Analyze the data transfer protocol over a wide range of scenarios, including faster and slower clock frequencies and different data rates
+- Strictly follow the synchronous design methodology (i.e. all registers in a system should be synchronized by a common clock signal)
+- Isolate the memory components from the VHDL description and code them in a separate segment.  One-segment coding style is not advisable
+- The memory components should be coded clearly so that a predesigned cell can be inferred from the device library
+- Avoid synthesizing a memory component from scratch
+- Asynchronous reset, if used, should be only for system initialization.  It should not be used to clear the registers during regular operation
+- Unless there is a compelling reason, a variable should not be used to infer a memory component
