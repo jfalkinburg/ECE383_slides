@@ -103,7 +103,55 @@
 # Metastability and Synchronization Failure
 
 
-## Metastability and Synchronization Failure
+## Timing Analysis of a Synchronous System
+
+- To satisfy setup time constraint
+  - Signal from the state register
+    - Controlled by the clock
+    - Adjust clock period to avoid setup time violation
+  - Signal from external input
+    - Same if the external input comes from another synchronous subsystem
+    - Otherwise, have to deal with the occurrence of setup time violation
+
+![Mealy Machine](mealy.jpg)
+
+
+## Metastability
+
+- What happens after timing violation?
+  - Output of FF become 1 (sampled old input value)
+  - Output becomes 0 (sampled new input value)
+  - FF enters metastable state, the output exhibits an "in-between" value
+    - FF eventually "resolves" to one of the stable states
+    - The resolution time is a random variable with distribution function (is a decay constant)
+    ![Equation](metastability_equation.jpg)
+    - The probability that metastability persists beyondis MTBF
+
+
+## Metastability
+
+![Metastability](metastability.jpg)
+
+
+## Mean Time Between Synchronization Failures (MTBF)
+
+- Synchronization Failure - a FF cannot resolve the metastable condition within the given time
+- MTBF
+  - Mean Time Between synchronization Failures
+  - Basic criterion for metastability analysis
+  - Frequently expressed as a function of ![Tr](Tr.jpg) (resolution time provided)
+
+
+## Mean Time Between Synchronization Failures (MTBF)
+
+![Variable Definitions](variables.jpg)
+
+![MTBF Equations](MTBF_equations.jpg)
+
+
+## MTBF Example
+
+![MTBF Example](example.jpg)
 
 
 
