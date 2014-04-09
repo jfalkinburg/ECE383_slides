@@ -160,6 +160,23 @@
 
 ## Synchronizer
 
+## Why is Synchronization a "Tricky" Issue?
+
+- Metastability is basically an "analog" phenomena
+- Metastability behavior is described by a random variable
+- Metastability cannot be easily modeled or simulated in gate level (only 'X')
+- Metastability cannot be easily observed or measured in a physical circuit (e.g. MTBF = 3 months)
+- MTBF is very sensitive to circuit revision (combinational and routing delays)
+
+
+## Synchronization Methods
+
+**Sharing Data Across Clock Domains**
+
+- *FIFO* - synchronization is needed for empty and full status signals
+- *Shared Memory* - synchronization needed for arbitration circuit
+- *Dual-Port Memory* - meta-stable condition may occur in the internal arbitration circuit
+
 
 
 # Synthesis Guidelines
