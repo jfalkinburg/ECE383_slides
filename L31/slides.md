@@ -238,9 +238,15 @@
 
 **Section 9.5**
 
-- Asynchronous reset should be only for system init.  It should not be used to clear registers during regular system operation
+- Asynchronous reset should be only for system initialization.  It should not be used to clear registers during regular system operation
 - Do not manipulate or gate the clock signal.  Most desired operations can be achieved by using a register with an enable signal
 - LFSR is an effective way to construct a counter.  It can be used when the counting patterns are not important
+
+
+## Synthesis Guidelines
+
+**Section 9.5**
+
 - Throughput and delay are two performance criteria.  Adding a pipeline to a combinational circuit can increase the throughput but not reduce the delay
 - The main task of adding a pipeline to acombinatioralcircuit is to divide the circuit into balanced stages.  Software with retiming capability can aid in this task
 
