@@ -33,6 +33,9 @@
   - Output impedance of an individual cell
   - Summation of parasitic capacitances of wires and input capacitances for load cells
 
+
+## Propagation Delay - Overview
+
 ![Delay](delay.jpg)
 
 
@@ -108,7 +111,11 @@ Writing better RTL code
   - During logic synthesis, the logic expressions will be rearranged and optimized
   - During technology mapping, generic gates will be re-mapped
   - During placement & routing, wire delays may change
-- How to deal withit?
+
+
+## Timing Hazards - Dealing with Hazards
+
+- How to deal with it?
   - Ignore glitches in the transient period and retrieve the data after the signal is stabilized
   - Synchronous Design! - but now we have to deal with setup and hold time constraints
 
@@ -148,9 +155,9 @@ Writing better RTL code
 
 ## Sequential Timing Analysis - Hold Time Violation
 
-![Hold Time Violation](hold_violation.jpg)
+We don't worry about hold time reqmts unless clock edge does not arrive at all FFs at same time
 
-We don't need to worry about hold time requirements unless the clock edge does not arrive at all Flip Flops at the same time
+![Hold Time Violation](hold_violation.jpg)
 
 
 ## Sequential Timing Analysis - Output Delay
