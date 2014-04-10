@@ -90,11 +90,10 @@
 ## Derived vs. Independent Clocks
 
 - Independent clocks - relationship between the clocks is unknown
-- Derived clocks
-  - A clock is derived from another clock (e.g. different clock rate or phase)
-  - Relationship is known
+- Derived clocks - relationship is known
+  - Clock is derived from another clock (e.g. different clock rate or phase)
   - Logic for the derived clock should be separated from regular logic and manually synthesized (e.g. special delay line or PLL)
-  - A system with derived clock can still be treated and analyzed as a synchronous system
+  - System with derived clock can still be treated and analyzed as a synchronous system
 - Globally Asynchronous Locally Synchronous System (GALS)
   - Partition a system into multiple clock domains
   - Design and verify subsystem in same clock domain as a synchronous system
@@ -107,13 +106,12 @@
 
 ## Timing Analysis of a Synchronous System
 
-- To satisfy setup time constraint
-  - Signal from the state register
-    - Controlled by the clock
-    - Adjust clock period to avoid setup time violation
-  - Signal from external input
-    - Same if the external input comes from another synchronous subsystem
-    - Otherwise, have to deal with the occurrence of setup time violation
+- Signal from the state register
+  - Controlled by the clock
+  - Adjust clock period to avoid setup time violation
+- Signal from external input
+  - Same if the external input comes from another synchronous subsystem
+  - Otherwise, have to deal with the occurrence of setup time violation
 
 ![Mealy Machine](mealy.jpg)
 
@@ -127,7 +125,7 @@
     - FF eventually "resolves" to one of the stable states
     - The resolution time is a random variable with distribution function (is a decay constant)
     ![Equation](metastability_equation.jpg)
-    - The probability that metastability persists beyondis MTBF
+    - The probability that metastability persists beyond is MTBF
 
 
 ## Metastability
@@ -162,9 +160,10 @@
 - Only ![Tr](Tr.jpg) can be adjusted in a practical design
 - MTBF is extremely sensitive to ![Tr](Tr.jpg)
   - Good - synchronization failure can easily be avoided by providing additional resolution time
-  - Bad - minor modification can introduce synchronization failure
+  - Bad - minor mod can introduce synchronization failure
 
 ![Mealy Machine](mealy.jpg)
+
 
 
 # Synchronization
