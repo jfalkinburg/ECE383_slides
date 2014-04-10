@@ -9,7 +9,7 @@
 - Clock Distribution Network and Skew
 - Multiple Clock System
 - Metastability and Synchronization Failure
-- Synchronizer
+- Synchronization
 - Synthesis Guidelines
 
 
@@ -154,11 +154,62 @@
 ![MTBF Example](example.jpg)
 
 
+## MTBF Observations
 
-# Synchronizer
+- MTBF is a statistical average
+- Only ![Tr](Tr.jpg) can be adjusted in a practical design
+- MTBF is extremely sensitive to ![Tr](Tr.jpg)
+  - Good - synchronization failure can easily be avoided by providing additional resolution time
+  - Bad - minor modification can introduce synchronization failure
+
+![Mealy Machine](mealy.jpg)
 
 
-## Synchronizer
+# Synchronization
+
+
+## Synchronization Circuit
+
+- Synchronize an asynchronous input with system clock
+- No physical circuit can prevent metastability
+- Synchronizer just provides enough time for the metastable condition to be "resolved"
+- Example:
+
+![Variables](sync_variables.jpg)
+
+
+## Synchronization Circuit
+
+![All Syncrhonization Circuits](all_sync_circuits.jpg)
+
+
+## Synchronization Circuit - No Synchronizer
+
+![No Synchronizer Equations](no_sync_equations.jpg)
+
+![No Synchronizer](no_sync.jpg)
+
+
+## Synchronization Circuit - One-FF Synchronizer
+
+![One FF Equations](one_ff_equations.jpg)
+
+![One FF Synchronizer](one_ff.jpg)
+
+
+## Synchronization Circuit - Two-FF Synchronizer
+
+![Two FF Equations](two_ff_equations.jpg)
+
+![Two FF Synchronizer](two_ff.jpg)
+
+
+## Synchronization Circuit - Three-FF Synchronizer
+
+![Three FF Equations](three_ff_equations.jpg)
+
+![Three FF Synchronizer](three_ff.jpg)
+
 
 ## Why is Synchronization a "Tricky" Issue?
 
