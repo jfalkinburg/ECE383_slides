@@ -43,18 +43,20 @@
 
 ![Timing Analysis](timing.jpg)
 
-**Clock skew actually helps increase clock rate in this particular case**
+**Clock skew actually helps increase clock rate in this case**
 
 
 ## Timing Analysis
 
 - If the clock signal travels from the opposite direction:
+
   ![Opposite Direction](opposite.jpg)
   - Now the clock skewdecreasesthe maximum clock rate
   - Normally we have to consider the worst case since:
     - No control on clock routing during synthesis
     - Multiple feedback paths
 - Hold time constraint
+
   ![Hold Time](hold.jpg)
   - Skew may reduce hold time margin
   - Hold time violation cannot be corrected in RTL design
